@@ -3,10 +3,9 @@ import expressJoi from 'express-joi-validation';
 
 const createValidator = expressJoi.createValidator;
 const validator = createValidator({ passError: true});
-const bodyValidator = Joi.object({
-    name: Joi.string().required().min(3).max(256),
+const loginBodyValidator = Joi.object({
     email: Joi.string().email().required(),
-    password: Joi.string().required().min(3)
+    password: Joi.string().required()
 })
 
-export const addUserValidator = validator.body(bodyValidator);
+export const loginValidator = validator.body(loginBodyValidator);
