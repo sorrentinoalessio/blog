@@ -1,10 +1,11 @@
 {
   "name": "blog",
   "version": "1.0.0",
+  "type": "module",
   "description": "blog multiutente",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "NODE_ENV=test mocha 'tests/**/*.js' --recursive -c -t 5000 --exit",
     "start": "node server.js"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "express": "^5.2.1",
     "joi": "^18.0.2",
     "mocha": "^11.7.5",
+    "mongodb-memory-server": "^11.0.1",
     "multer": "^2.0.2",
     "sinon": "^21.0.1",
     "socket.io": "^4.8.3"
